@@ -1,0 +1,40 @@
+*{
+    color: white;
+    background-color: rgb(7, 5, 20);
+    height: 12vh;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.footer-top{
+    display: flex;
+    flex-direction: row;
+    padding-left: 100px;
+    padding-top: 50px;
+
+}
+.footer-text{
+    gap: 10px;
+}
+.footer-text .footer-title-main{
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.footer-subtitle{
+    width: 320px;
+    font-weight: 200;
+}
+.footer-top-button a{
+    text-decoration: none;
+    padding: 30px 20px;
+    border-radius: 100px;
+    background-color: darkslategrey;
+    margin-left: 385px;
+}
+
+.footer-bottom{
+    padding-top: 50px;
+    padding-left: 100px;
+    font-weight: 100;
+}
