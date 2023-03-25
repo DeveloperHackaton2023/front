@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { User } from './user-models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private _isAuthorized: boolean = false;
-  private roles!: string;
+  private user!: User;
   private token!: string;
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -22,19 +23,17 @@ export class UserService {
         this.token = response.body as string;
         this._isAuthorized = true;
 
-        this.http.get(environment.api_root + "auth/users/get/roles/", { observe: 'response', responseType: 'text', withCredentials: true})
+        this.http.get<User>(environment.api_root + "user/get/", { observe: 'response', withCredentials: true})
         .subscribe(response => {
         
           if(response.ok) {
-            // console.log(response.body);
-            this.roles = response.body as string;
+            this.user = response.body as User;
+
+            if(lord == 'lord' && this.user.roles.includes('ROLE_ADMIN'))
+              this.router.navigate(['/user/admin/dashboard'])
+            else
+              this.router.navigate(['/user'])
           }
-
-          if(lord == 'lord' && this.roles.includes('ROLE_ADMIN'))
-            this.router.navigate(['/user/admin/dashboard'])
-          else
-            this.router.navigate(['/user'])
-
         });
         
       }
