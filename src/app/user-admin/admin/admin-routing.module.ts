@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from '../components/dashboard/dashboard.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { HousesPanelComponent } from './houses-panel/houses-panel.component';
 import { TicketsPanelComponent } from './tickets-panel/tickets-panel.component';
 import { UsersPanelComponent } from './users-panel/users-panel.component';

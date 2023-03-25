@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TicketService } from '../../../services/ticket.service';
+// import { TicketService } from '../../../services/ticket.service';
 import { TicketInterface } from '../test-ticket-interface';
 @Component({
   selector: 'app-create-ticket',
@@ -11,10 +11,10 @@ export class CreateTicketComponent {
   flat = '';
   header = '';
 
-  constructor(private ticketService: TicketService){}
+  // constructor(private ticketService: TicketService){}
 
-  onSubmit(): void {
-    this.ticketService.createTicket(this.flat, this.header, this.body);
-    console.log(this.ticketService.getMyTickets())
-  }
+  // onSubmit(): void {
+  //   this.ticketService.createTicket(this.flat, this.header, this.body);
+  //   console.log(this.ticketService.getMyTickets())
+  // }
 }
