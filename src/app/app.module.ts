@@ -21,6 +21,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgIconsModule } from '@ng-icons/core';
+import { matHome } from '@ng-icons/material-icons/baseline'
+import { matSupervisedUserCircleOutline } from '@ng-icons/material-icons/outline'
+import { cssHome } from '@ng-icons/css.gg';
+
+
 
 
 @NgModule({
@@ -44,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     FormsModule, 
     ReactiveFormsModule,
+    NgIconsModule.withIcons({ cssHome, matHome, matSupervisedUserCircleOutline })
   ],
   providers: [],
   bootstrap: [AppComponent]

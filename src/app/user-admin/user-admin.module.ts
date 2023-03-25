@@ -15,11 +15,11 @@ import { CreateTicketComponent } from './components/create-ticket/create-ticket.
     DashboardComponent,
     MyTicketsComponent,
     TicketDetailComponent,
-    CreateTicketComponent
+    CreateTicketComponent,
   ],
   imports: [
     CommonModule,
-    UserAdminRoutingModule
+    UserAdminRoutingModule,
   ]
 })
 export class UserAdminModule { }

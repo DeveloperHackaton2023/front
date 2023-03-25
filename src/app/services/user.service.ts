@@ -14,11 +14,11 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router) { }
 
   public tryLogin(iin: string, password: string, lord: string) {
-    this.http.post(environment.api_root + "auth/v1/authenticate", {"iin": iin,"password": password}, { observe: 'response', responseType: 'text'})
+    this.http.post(environment.api_root + "auth/v1/authenticate", {"iin": iin, "password": password}, { observe: 'response', responseType: 'text'})
     .subscribe(response => {
 
       if(response.ok) {
-        console.log(response.body);
+        // console.log(response.body);
         this.token = response.body as string;
         this._isAuthorized = true;
 
@@ -26,13 +26,12 @@ export class UserService {
         .subscribe(response => {
         
           if(response.ok) {
-            console.log(response.body);
+            // console.log(response.body);
             this.roles = response.body as string;
           }
 
-
           if(lord == 'lord' && this.roles.includes('ROLE_ADMIN'))
-            this.router.navigate(['/admin'])
+            this.router.navigate(['/user/admin/dashboard'])
           else
             this.router.navigate(['/user'])
 

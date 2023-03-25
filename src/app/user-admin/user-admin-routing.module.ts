@@ -10,9 +10,9 @@ const routes: Routes = [
   children: [
     {path: 'my-tickets', component: MyTicketsComponent},
     {path: 'my-tickets:id', component: TicketDetailComponent},
-    {path: 'create-ticket', component: CreateTicketComponent},
-  ]
-  }
+    {path: 'create-ticket', component: CreateTicketComponent}, ]
+  },
+  {path: "admin", loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule)},
 
 ];
 

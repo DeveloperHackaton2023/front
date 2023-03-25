@@ -1,0 +1,19 @@
+.block {
+  width: 100%;
+  min-height: 93vh;
+}
+
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+a div {
+  display: flex;
+  margin: 0 auto;
+  gap: 15px;
+}
