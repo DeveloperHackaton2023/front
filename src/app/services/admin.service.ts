@@ -23,7 +23,6 @@ export class AdminService {
         return new Observable(b => {
             this.http.get<Osi>(environment.api_root + "admin/get/osi/", { observe: 'response', withCredentials: true})
             .subscribe(response => {
-            
               if(response.ok) {
                 this.osi = response.body as Osi;
                 this.setInitialized = true;

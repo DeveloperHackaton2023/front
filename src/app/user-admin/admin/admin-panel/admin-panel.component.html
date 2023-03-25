@@ -19,20 +19,20 @@
   <mat-sidenav mode="side" opened>
     <mat-nav-list>
       <!-- Все добавления -->
-      <a mat-list-item href="user/admin/dashboard">
+      <a mat-list-item [routerLink]="['dashboard']">
         <div><mat-icon>home</mat-icon>Главная</div>  
       </a>
       
       <!-- Вся инфа по пользователям -->
-      <a mat-list-item href="user/admin/users">
+      <a mat-list-item [routerLink]="['users']">
         <div><mat-icon>assignment_ind</mat-icon>Пользователи</div> 
       </a>
       <!-- Вся инфа по жилищам -->
-      <a mat-list-item href="user/admin/houses">
+      <a mat-list-item [routerLink]="['houses']">
         <div><mat-icon>meeting_room</mat-icon>Жилища</div>
       </a>
       <!-- Вся инфа по заявкам -->
-      <a mat-list-item href="user/admin/tickets">
+      <a mat-list-item [routerLink]="['tickets']">
         <div><mat-icon>map</mat-icon>Заявки</div>
       </a>
     </mat-nav-list>

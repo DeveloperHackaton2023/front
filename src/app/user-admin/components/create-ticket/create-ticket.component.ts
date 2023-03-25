@@ -13,8 +13,8 @@ export class CreateTicketComponent {
 
   // constructor(private ticketService: TicketService){}
 
-  // onSubmit(): void {
-  //   this.ticketService.createTicket(this.flat, this.header, this.body);
-  //   console.log(this.ticketService.getMyTickets())
-  // }
+  onSubmit(): void {
+    // this.ticketService.createTicket(this.flat, this.header, this.body);
+    // console.log(this.ticketService.getMyTickets())
+  }
 }
