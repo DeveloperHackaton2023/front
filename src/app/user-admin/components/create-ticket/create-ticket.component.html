@@ -1,1 +1,28 @@
-<p>create-ticket works!</p>
+<div class="create-ticket">
+    <div class="welcom-user">Здравствуйте, Балакан Ислам</div>
+    <div class="form_wrapper">
+        <div class="form_container">
+          <div class="title_container">
+            <h2>Подать заявку</h2>
+          </div>
+          <div class="row clearfix">
+            <div class="">
+              <form (ngSubmit)="onSubmit()">
+                
+                <div class="input_field"> 
+                  <input [(ngModel)]="flat" type="flat" name="flat" placeholder="Квартира" required/>
+                </div>
+                <div class="input_field"> 
+                  <input [(ngModel)]="header" type="header" name="header" placeholder="Тема заявки" required />
+                </div>
+                <div class="input_field">
+                    <input [(ngModel)]="body" type="body" name="body" placeholder="Подробное описание" required />
+                </div>
+                    
+                <input class="button" type="submit" value="Создать заявку" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
