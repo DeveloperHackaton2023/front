@@ -1,1 +1,24 @@
-<p>my-tickets works!</p>
+<div class="create-ticket">
+    <div class="welcom-user">Здравствуйте, Балакан Ислам</div>
+    <div class="form_wrapper">
+        <div class="form_container">
+          <div class="title_container">
+            <h2>Мои заявки</h2>
+          </div>
+          <div class="row clearfix" *ngFor="let ticket of tickets">
+            <div class="ticket-body" >
+                <div class="ticket-description">
+                    <div class="ticket-id">Заявка №{{ticket.id}}</div>
+                    <div class="ticket-name">Тема {{ticket.header}}</div>
+                    <div class="ticket-status">Статус: Создана</div>
+                </div>
+
+              <form >
+                <input class="button" value="Подробнее" [routerLink]="['my-tickets', ticket.id]"/>
+                <input class="button" type="submit" value="Удалить заявку" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
