@@ -1,39 +1,6 @@
-<!-- <div class="regist-user">
-    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-
-        <div>
-          <label for="iin">
-            ИИН
-          </label>
-          <input id="iin" type="text" formControlName="iin">
-        </div>
-      
-        <div>
-          <label for="address">
-            Телефон
-          </label>
-          <input id="address" type="text" formControlName="phone">
-        </div>
-        <div>
-            <label for="email">
-              Email
-            </label>
-            <input id="email" type="text" formControlName="email">
-          </div>
-        <button class="button" type="submit">Purchase</button>
-      
-      </form>
-</div> -->
-<!-- <img src="../../../assets/img/image_1.jpg" alt=""> -->
 <div class="header">
     <div class="header-navbar">
-        <div class="header-name">OSI</div>
-
-    
-        <div class="user-control">
-            <div class="registration"><a href="#">Change_language</a></div>
-            <div class="authorization"><a routerLink="/registration">Authorization</a></div>    
-        </div>
+        <div class="header-name"><a href="/" style="text-decoration: none; color: black">ОСИ</a></div>
     </div>
 
 <div class="form_wrapper">
@@ -52,40 +19,12 @@
             <input [(ngModel)]="password" type="password" name="password" placeholder="Пароль" required />
           </div>
 
-          <!-- <div class="row clearfix">
-            <div class="col_half">
-              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                <input type="text" name="name" placeholder="First Name" />
-              </div>
-            </div>
-            <div class="col_half">
-              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                <input type="text" name="name" placeholder="Last Name" required />
-              </div>
-            </div>
-          </div> -->
               <div class="input_field radio_option">
               <input type="radio" name="radiogroup1" id="rd1" checked>
               <label for="rd1">Жилец</label>
               <input [(ngModel)]="lord" type="radio" name="radiogroup1" id="rd2" value="lord">
               <label for="rd2" >Администратор</label>
               </div>
-              <!-- <div class="input_field select_option">
-                <select>
-                  <option>Select a country</option>
-                  <option>Option 1</option>
-                  <option>Option 2</option>
-                </select>
-                <div class="select_arrow"></div>
-              </div> -->
-            <!-- <div class="input_field checkbox_option">
-              <input type="checkbox" id="cb1" formControlName="agreed">
-          <label for="cb1">Я принимаю все соглашения</label>
-            </div>
-            <div class="input_field checkbox_option">
-              <input type="checkbox" id="cb2"  formControlName="agreed">
-          <label for="cb2">Я хочу получать новостные рассылки</label>
-            </div> -->
           <input class="button" type="submit" value="Войти" />
         </form>
       </div>

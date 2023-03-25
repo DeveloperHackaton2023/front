@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     if (this.password && this.iin) {
-      this.userService.tryLogin(this.iin, this.password)
+      this.userService.tryLogin(this.iin, this.password, this.lord)
       return;
     }
     alert("Неверный ИИН или номер телефона")
