@@ -1,0 +1,16 @@
+.flexDiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+.spinner {
+    padding-top: 20%;
+    padding-left: 40%;
+    margin: 0 auto;
+}

@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     UserAdminRoutingModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class UserAdminModule { }

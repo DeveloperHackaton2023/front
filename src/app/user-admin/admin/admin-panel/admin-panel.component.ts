@@ -16,9 +16,11 @@ export class AdminPanelComponent implements OnInit{
     
   }
   ngOnInit() {
-    this.adminService.initialize().subscribe(b => {
-      this.setOsiNumber = this.adminService.getOsiNumber;
-    });
+    if(!this.adminService.IsInitialized) {
+      this.adminService.initialize().subscribe(b => {
+        this.setOsiNumber = this.adminService.getOsiNumber;
+      });
+    }
   }
 
   set setOsiNumber(v: number) {

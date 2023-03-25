@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { delay, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Osi } from './admin-models/osi';
+import { Ticket } from './admin-models/ticket';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,6 @@ export class AdminService {
               }
             });
         })
-
     }
 
     set setInitialized(v: boolean) {
@@ -44,6 +44,13 @@ export class AdminService {
 
     get getOsiNumber(): number {
         return this.osi.id;
+    }
+
+    get getTickets(): Ticket[] {
+        let tickets : Ticket[] = [];
+        this.osi.houses.forEach(v => v.tickets.forEach(t => tickets.push(t)));
+        tickets.sort((a, b) => (a.id > b.id ? -1 : 1));
+        return tickets;
     }
 
 }
