@@ -16,10 +16,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NewsComponent } from './components/news/news.component';
-import { RegistrComponent } from './components/registr/registr.component';
+import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,11 +30,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     DashboardComponent,
     NewsComponent,
-    RegistrComponent,
+    LoginComponent,
     NotFoundComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,

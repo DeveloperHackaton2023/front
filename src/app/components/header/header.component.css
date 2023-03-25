@@ -52,10 +52,11 @@
 }
 
 .user-control{
+  position: relative;
   display: flex;
   text-align: center;
   padding: 25px;
-  padding-left: 590px;
+  left: 75%;
   width: 280px;
   gap: 20px;
 }
