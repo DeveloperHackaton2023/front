@@ -1,13 +1,33 @@
 <div class="example-action-buttons">
   </div>
   <mat-accordion class="example-headers-align" multi>
+
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Зарегестрировать пользователя
+        </mat-panel-title>
+        <mat-panel-description>
+          Добавить пользователя в ОСИ
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="reg">
+        <app-register-user>
+        
+        </app-register-user>
+      </div>
+  
+    </mat-expansion-panel>
+
     <mat-expansion-panel expanded="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Добавить собственника
         </mat-panel-title>
         <mat-panel-description>
-          Зарегестрировать нового собственника
+          подключить нового собственника в ОСИ
           <mat-icon>account_circle</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>

@@ -10,6 +10,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
+import { MatStepperModule } from '@angular/material/stepper';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
@@ -20,6 +21,7 @@ import { TicketsPanelComponent } from './tickets-panel/tickets-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TicketEditPanelComponent } from './tickets-panel/ticket-edit-panel/ticket-edit-panel.component';
 import { AddClientComponent } from './dashboard/add-client/add-client.component';
+import { RegisterUserComponent } from './dashboard/register-user/register-user.component';
 
 
 
@@ -32,7 +34,8 @@ import { AddClientComponent } from './dashboard/add-client/add-client.component'
     HousesPanelComponent,
     TicketsPanelComponent,
     TicketEditPanelComponent,
-    AddClientComponent
+    AddClientComponent,
+    RegisterUserComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +51,8 @@ import { AddClientComponent } from './dashboard/add-client/add-client.component'
     MatExpansionModule,
     ReactiveFormsModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatStepperModule
   ]
 })
 export class AdminModule { }
