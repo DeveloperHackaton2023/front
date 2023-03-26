@@ -10,7 +10,7 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class TicketsPanelComponent implements OnInit {
 
-  protected displayedColumns = ['subject', 'description', 'created', 'status'];
+  protected displayedColumns = ['subject', 'description', 'created', 'status', 'adminResponse'];
 
   constructor(private adminService: AdminService, 
     private router: Router, 
