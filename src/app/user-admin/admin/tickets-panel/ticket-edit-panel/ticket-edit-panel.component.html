@@ -1,0 +1,69 @@
+<div *ngIf="isInitialized as n; else loading" class="flexDiv">
+    <h1>
+        Редактирование заявки номер — {{ Id }}
+    </h1>
+    
+<table class="example-full-width" cellspacing="0"><tr>
+    <td>
+        <mat-form-field class="example-form-field">
+            <mat-label>Тема</mat-label>
+            <input matInput type="text" [(ngModel)]="Subject">
+            <button *ngIf="Subject" matSuffix mat-icon-button aria-label="Clear" (click)="Subject=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+  </td>
+    
+  <td>
+    <mat-form-field appearance="fill">
+        <mat-label>Выберите статус</mat-label>
+        <mat-select (selectionChange)="changeStatus($event.value)">
+          <mat-option value="1">В обработку</mat-option>
+          <mat-option value="2">Отклонить</mat-option>
+          <mat-option value="3">Завершено</mat-option>
+        </mat-select>
+      </mat-form-field>
+  </td>
+  </tr></table>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td>
+        <mat-form-field class="example-form-field">
+            <mat-label>Описание</mat-label>
+            <textarea matInput [(ngModel)]="Description"
+            cdkTextareaAutosize
+                cdkAutosizeMinRows="10"
+                cdkAutosizeMaxRows="10"></textarea>
+            <button *ngIf="Description" matSuffix mat-icon-button aria-label="Clear" (click)="Description=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+  </td>
+    
+  <td>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Ваше дополнение</mat-label>
+        <textarea matInput [(ngModel)]="AdminResponse"
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="10"
+        cdkAutosizeMaxRows="10"></textarea>
+        <button *ngIf="AdminResponse" matSuffix mat-icon-button aria-label="Clear" (click)="AdminResponse=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+  </td>
+  </tr></table>
+
+  <p><button mat-fab extended color="primary" (click)="onClick()">
+    <mat-icon>send</mat-icon>
+    Подтвердить
+</button></p>
+
+</div>
+
+<ng-template #loading>
+    <div class="spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>

@@ -1,0 +1,81 @@
+.spinner {
+    padding-top: 20%;
+    padding-left: 40%;
+    margin: 0 auto;
+}
+
+table{
+    width: 100%;
+   }
+   
+.mat-column-subject {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 12% !important;
+     width: 12% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+}
+   
+.mat-column-description {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 15% !important;
+     width: 15% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+}
+ 
+.mat-column-created {
+   word-wrap: break-word !important;
+   white-space: unset !important;
+   flex: 0 0 10% !important;
+   width: 10% !important;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+ 
+   word-break: break-word;
+ }
+
+ .mat-column-status {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 8% !important;
+    width: 8% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    word-break: break-word;
+  }
+ 
+ 
+.mat-column-adminResponse {
+     word-wrap: break-word !important;
+     white-space: unset !important;
+     flex: 0 0 20% !important;
+     width: 20% !important;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+   
+     word-break: break-word;
+   
+     -ms-hyphens: auto;
+     -moz-hyphens: auto;
+     -webkit-hyphens: auto;
+     hyphens: auto;
+}
+   

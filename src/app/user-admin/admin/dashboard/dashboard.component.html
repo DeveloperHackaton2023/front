@@ -1,1 +1,88 @@
-<p>dasboard works!</p>
+<div class="example-action-buttons">
+  </div>
+  <mat-accordion class="example-headers-align" multi>
+
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Зарегестрировать пользователя
+        </mat-panel-title>
+        <mat-panel-description>
+          Добавить пользователя в ОСИ
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="reg">
+        <app-register-user>
+        
+        </app-register-user>
+      </div>
+  
+    </mat-expansion-panel>
+
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Добавить собственника
+        </mat-panel-title>
+        <mat-panel-description>
+          подключить нового собственника в ОСИ
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <app-add-client></app-add-client>
+  
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Добавить новую квартиру собственнику
+          </mat-panel-title>
+          <mat-panel-description>
+            Если нужна только одна
+            <mat-icon>add_comment</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+  
+        <form class="example-form">
+        
+          <table class="example-full-width" cellspacing="0"><tr>
+            <td><mat-form-field class="example-full-width">
+              <mat-label>ИИН</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </td>
+
+        </table>
+  
+          <h3>Добавить квартиру</h3>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Адрес</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Номер квартиры</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Доп. информация</mat-label>
+                    <input matInput>
+            </mat-form-field>
+  
+          <div class="userSubmit">
+              <button mat-fab extended color="primary">
+                  <mat-icon>send</mat-icon>
+                  Подтвердить
+              </button>
+          </div>
+        </form>
+    
+      </mat-expansion-panel>
+  </mat-accordion>
+  
+
+
+  

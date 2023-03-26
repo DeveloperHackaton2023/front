@@ -1,10 +1,10 @@
 import { TicketStatus } from "./status";
 
-export interface ticket {
+export interface Ticket {
     id: number;
-    Subject: string;
-    Description: string;
-    Created: Date;
-    Statuses: TicketStatus[];
-    AdminResponse: string;
+    subject: string;
+    description: string;
+    created: Date;
+    statuses: TicketStatus[];
+    adminResponse: string;
 }

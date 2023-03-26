@@ -25,6 +25,8 @@ import { NgIconsModule } from '@ng-icons/core';
 import { matHome } from '@ng-icons/material-icons/baseline'
 import { matSupervisedUserCircleOutline } from '@ng-icons/material-icons/outline'
 import { cssHome } from '@ng-icons/css.gg';
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { PotentialComponent } from './components/potential/potential.component';
 
 
 
@@ -38,6 +40,8 @@ import { cssHome } from '@ng-icons/css.gg';
     NewsComponent,
     LoginComponent,
     NotFoundComponent,
+    FeedbackComponent,
+    PotentialComponent
   ],
   imports: [
     BrowserModule,

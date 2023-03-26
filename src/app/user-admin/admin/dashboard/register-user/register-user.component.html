@@ -1,0 +1,84 @@
+<mat-stepper [linear]="true" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Регистрация аккаунта</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>ИИН</mat-label>
+          <input matInput placeholder="ИИН" formControlName="iinCtrl" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>ФИО</mat-label>
+            <input matInput placeholder="Полное имя" formControlName="nameCtrl" required>
+          </mat-form-field>
+        <div>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Телефон</mat-label>
+                <span matPrefix>+7 &nbsp;</span>
+                <input type="tel" matInput placeholder="555-555-1234" formControlName="telCtrl" required>
+                <mat-icon matSuffix>mode_edit</mat-icon>
+              </mat-form-field>
+
+        <p>
+            Внимание! Пароль будет соответствовать введённому ИИН!
+        </p>
+          <button mat-button matStepperNext>Далее</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="houses" label="Ввод данных жилья">
+        <form [formGroup]="houses">
+            <div formArrayName="house">
+                <div *ngFor="let houseGroup of house?.controls; let i = index">
+    
+                <h3>Добавление квартиры № — {{i + 1}}</h3>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Адрес</mat-label>
+                  <input matInput formControlName="addresCtrl" required>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Номер квартиры</mat-label>
+                  <input matInput formControlName="addresCtrl" required>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Доп. информация</mat-label>
+                  <input matInput >
+                </mat-form-field>
+                </div>
+            </div>
+            
+            <table>
+              <tr>
+                <td>
+                  <button mat-icon-button aria-label="Example icon-button with heart icon" (click)="addHouse()">
+                    <mat-icon>add_location</mat-icon>
+                </button>
+                </td>
+                <td>
+                  <button mat-icon-button aria-label="Example icon-button with heart icon" (click)="removeHouse()">
+                    <mat-icon>keyboard_arrow_left</mat-icon>
+                </button>
+                </td>
+              </tr>
+            </table>
+            
+        </form>
+    
+        <div>
+            <button mat-button matStepperPrevious>Назад</button>
+            <button mat-button matStepperNext>Вперёд</button>
+          </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Завершение</ng-template>
+      <p>Вы завершили процедуру регистрации. Нажмите подтвердить, чтобы сохрнаить данные.</p>
+      <div>
+        <button mat-button matStepperPrevious>Назад</button>
+        <button mat-button (click)="stepper.reset()">Сброс</button>
+        <button mat-button (click)="submit(); stepper.reset()">Подтвердить</button>
+      </div>
+    </mat-step>
+  </mat-stepper>

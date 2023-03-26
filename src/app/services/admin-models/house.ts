@@ -1,5 +1,5 @@
 import { Client } from "./client";
-import { ticket } from "./ticket";
+import { Ticket } from "./ticket";
 
 export interface House {
     id: number;
@@ -10,7 +10,7 @@ export interface House {
 
     info: string;
 
-    tickets: ticket[];
+    tickets: Ticket[];
 
     user: Client;
 }

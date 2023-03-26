@@ -1,0 +1,67 @@
+<div *ngIf="isInitialized as n; else loading" class="example-action-buttons">
+ 
+  <mat-accordion class="example-headers-align" multi>
+
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Основная информация
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+
+      <app-main-info-table>
+      </app-main-info-table>
+  
+    </mat-expansion-panel>
+
+    
+    <mat-expansion-panel expanded="false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Создание заявки
+        </mat-panel-title>
+
+      </mat-expansion-panel-header>
+
+      <app-ticket-creation></app-ticket-creation>
+  
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Ваши квартиры
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+
+      <app-main-houses-table>
+      </app-main-houses-table>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Необходимые взносы за текущий месяц
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+
+      <app-main-prices-table>
+      </app-main-prices-table>
+
+    </mat-expansion-panel>
+
+   
+  </mat-accordion>
+  
+</div>
+
+<ng-template #loading>
+    <div class="spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>
