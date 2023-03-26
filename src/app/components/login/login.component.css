@@ -90,13 +90,14 @@ body img{
     border: 3px solid rgb(255, 255, 255);
   }
   .footer-bottom{
-    height: 200px;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #f2f2f2;
+    position: absolute;
     margin-bottom: 20px;
     padding-left: 100px;
     font-weight: 100;
-}
-
-
+  }
 .form_wrapper {
     background: #fff;
     width: 400px;
