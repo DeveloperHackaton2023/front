@@ -36,8 +36,6 @@ export class TicketsPanelComponent implements OnInit {
   getStatusTitle(ticket: Ticket) {
     var lastStatus = ticket.statuses.sort((a, b) => (+a.id > +b.id ? -1 : 1))[0];
 
-    console.log(ticket.id, ticket.statuses, lastStatus);
-
     switch(lastStatus.type)
     {
       case 'Created':

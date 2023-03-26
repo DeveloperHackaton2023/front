@@ -88,19 +88,19 @@ export class TicketEditPanelComponent implements OnInit{
     return this.adminService.IsInitialized;
   }
 
-  changeStatus(value: number) {
+  changeStatus(value: string) {
 
     switch(value) {
-      case 0:
+      case '0':
         this.selectedStatus = 'Created';
         break;
-      case 1:
+      case '1':
         this.selectedStatus = 'InProgress';
         break;
-      case 2:
+      case '2':
         this.selectedStatus = 'Denied';
         break;
-      case 3:
+      case '3':
         this.selectedStatus = 'Success';
         break;
       default:
@@ -118,8 +118,6 @@ export class TicketEditPanelComponent implements OnInit{
     edit.newStatus = this.selectedStatus;
 
     this.adminService.editTicket(edit).subscribe(b => {
-      this.Subject = '';
-      this.Description = '';
     })
   }
 
