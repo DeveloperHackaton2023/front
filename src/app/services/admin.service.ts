@@ -45,8 +45,10 @@ export class AdminService {
             this.http.post(environment.api_root + "admin/edit/ticket/", edit, { withCredentials: true})
             .subscribe(response => {
                 alert("Успешно изменено");
-                b.next();
-                b.complete();
+                this.initialize().subscribe(res => {
+                    b.next();
+                    b.complete();
+                })
             });
         });
     }
