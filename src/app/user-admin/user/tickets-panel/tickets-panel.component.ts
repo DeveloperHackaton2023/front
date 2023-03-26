@@ -11,7 +11,7 @@ export class TicketsPanelComponent implements OnInit {
 
   private tickets!: Ticket[];
 
-  protected displayedColumns = ['id', 'subject', 'description', 'created', 'status', 'adminResponse'];
+  protected displayedColumns = ['subject', 'description', 'created', 'status', 'adminResponse'];
 
   constructor(private clientService: ClientService) {
   }
