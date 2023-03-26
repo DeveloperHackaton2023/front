@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   api_root: "http://localhost:5010/terricon/api/",
+  url_root: "http://localhost:4200/",
 };
 
 /*

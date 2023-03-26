@@ -17,11 +17,10 @@ export class UserService {
   public tryLogin(iin: string, password: string, lord: string) {
     this.http.post(environment.api_root + "auth/v1/authenticate", {"iin": iin, "password": password}, { observe: 'response', responseType: 'text'})
     .subscribe(response => {
-
       if(response.ok) {
-        // console.log(response.body);
         this.token = response.body as string;
         this._isAuthorized = true;
+        document.cookie = 'jwt=' + this.token;
 
         this.http.get<User>(environment.api_root + "user/get/", { observe: 'response', withCredentials: true})
         .subscribe(response => {

@@ -36,4 +36,8 @@ export class DashboardComponent {
       })
     );
   }
+
+  removeHouse() {
+    this.house.removeAt(this.house.length - 1);
+  }
 }

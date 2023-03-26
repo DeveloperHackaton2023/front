@@ -57,10 +57,21 @@
                 </div>
             </div>
             
-    
-            <button mat-icon-button aria-label="Example icon-button with heart icon" (click)="addHouse()">
-                <mat-icon>add_location</mat-icon>
-            </button>
+            <table>
+              <tr>
+                <td>
+                  <button mat-icon-button aria-label="Example icon-button with heart icon" (click)="addHouse()">
+                    <mat-icon>add_location</mat-icon>
+                </button>
+                </td>
+                <td>
+                  <button mat-icon-button aria-label="Example icon-button with heart icon" (click)="removeHouse()">
+                    <mat-icon>keyboard_arrow_left</mat-icon>
+                </button>
+                </td>
+              </tr>
+            </table>
+            
         </form>
 
         <div class="userSubmit">

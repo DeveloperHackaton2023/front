@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { waitForAsync } from '@angular/core/testing';
-import { of } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -12,7 +11,8 @@ export class AdminPanelComponent implements OnInit{
 
   private osiNumber : number = 0;
 
-  constructor(private adminService: AdminService) {
+  constructor(private adminService: AdminService,
+    private router: Router) {
     
   }
   ngOnInit() {
@@ -33,5 +33,9 @@ export class AdminPanelComponent implements OnInit{
 
   get isInitialized() {
     return this.adminService.IsInitialized;
+  }
+
+  public powerOff() {
+    this.router.navigateByUrl('/');
   }
 }

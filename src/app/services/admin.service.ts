@@ -23,13 +23,22 @@ export class AdminService {
     public initialize() {
         return new Observable(b => {
             this.http.get<Osi>(environment.api_root + "admin/get/osi/", { observe: 'response', withCredentials: true})
-            .subscribe(response => {
-              if(response.ok) {
-                this.osi = response.body as Osi;
-                this.setInitialized = true;
-                b.next();
-                b.complete();
-              }
+            .subscribe({
+                next: (response) => {
+                    if(response.ok) {
+                        this.osi = response.body as Osi;
+                        this.setInitialized = true;
+                        b.next();
+                        b.complete();
+                    }
+                },
+                error: (error) => {
+                    console.log(error);
+                    console.log(environment.url_root + 'login');
+                    this.router.navigateByUrl(environment.url_root + 'login');
+                    b.next();
+                    b.error();
+                }
             });
         })
     }
