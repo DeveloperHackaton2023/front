@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { delay, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { EditTicket } from './admin-models/editTicket';
 import { Osi } from './admin-models/osi';
 import { Ticket } from './admin-models/ticket';
 
@@ -16,9 +17,7 @@ export class AdminService {
     private initialized: boolean = false;
 
     constructor(private http: HttpClient, private router: Router) 
-    { 
-
-    }
+    {}
 
     public initialize() {
         return new Observable(b => {
@@ -33,14 +32,23 @@ export class AdminService {
                     }
                 },
                 error: (error) => {
-                    console.log(error);
-                    console.log(environment.url_root + 'login');
-                    this.router.navigateByUrl(environment.url_root + 'login');
+                    this.router.navigate(['/']);
                     b.next();
                     b.error();
                 }
             });
         })
+    }
+
+    public editTicket(edit: EditTicket) {
+        return new Observable(b => {
+            this.http.post(environment.api_root + "admin/edit/ticket/", edit, { withCredentials: true})
+            .subscribe(response => {
+                alert("Успешно изменено");
+                b.next();
+                b.complete();
+            });
+        });
     }
 
     set setInitialized(v: boolean) {

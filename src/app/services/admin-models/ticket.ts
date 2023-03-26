@@ -5,6 +5,6 @@ export interface Ticket {
     subject: string;
     description: string;
     created: Date;
-    rtatuses: TicketStatus[];
+    statuses: TicketStatus[];
     adminResponse: string;
 }

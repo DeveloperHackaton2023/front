@@ -10,7 +10,7 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class TicketsPanelComponent implements OnInit {
 
-  protected displayedColumns = ['id', 'subject', 'description', 'created'];
+  protected displayedColumns = ['subject', 'description', 'created', 'status'];
 
   constructor(private adminService: AdminService, 
     private router: Router, 
@@ -31,6 +31,26 @@ export class TicketsPanelComponent implements OnInit {
 
   public openTicket(ticket: Ticket) {
     this.router.navigate(['edit', ticket.id], {relativeTo: this.activeRoute})
+  }
+
+  getStatusTitle(ticket: Ticket) {
+    var lastStatus = ticket.statuses.sort((a, b) => (+a.id > +b.id ? -1 : 1))[0];
+
+    console.log(ticket.id, ticket.statuses, lastStatus);
+
+    switch(lastStatus.type)
+    {
+      case 'Created':
+        return 'Создано';
+      case 'InProgress':
+        return 'В обработке'
+      case 'Denied':
+        return 'Отклонено'
+      case 'Success':
+        return 'Завершена'
+      default:
+        return lastStatus.title;
+    }
   }
 
 }

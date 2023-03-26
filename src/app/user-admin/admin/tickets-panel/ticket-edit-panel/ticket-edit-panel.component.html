@@ -17,9 +17,10 @@
   <td>
     <mat-form-field appearance="fill">
         <mat-label>Выберите статус</mat-label>
-        <mat-select>
-          <mat-option value="one">В обработку</mat-option>
-          <mat-option value="two">Отклонить</mat-option>
+        <mat-select (selectionChange)="changeStatus($event.value)">
+          <mat-option value="1">В обработку</mat-option>
+          <mat-option value="2">Отклонить</mat-option>
+          <mat-option value="3">Завершено</mat-option>
         </mat-select>
       </mat-form-field>
   </td>
@@ -43,15 +44,18 @@
 
     <mat-form-field appearance="fill">
         <mat-label>Ваше дополнение</mat-label>
-        <textarea matInput 
+        <textarea matInput [(ngModel)]="AdminResponse"
         cdkTextareaAutosize
         cdkAutosizeMinRows="10"
         cdkAutosizeMaxRows="10"></textarea>
+        <button *ngIf="AdminResponse" matSuffix mat-icon-button aria-label="Clear" (click)="AdminResponse=''">
+          <mat-icon>close</mat-icon>
+        </button>
       </mat-form-field>
   </td>
   </tr></table>
 
-  <p><button mat-fab extended color="primary">
+  <p><button mat-fab extended color="primary" (click)="onClick()">
     <mat-icon>send</mat-icon>
     Подтвердить
 </button></p>

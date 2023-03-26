@@ -19,6 +19,7 @@ import { HousesPanelComponent } from './houses-panel/houses-panel.component';
 import { TicketsPanelComponent } from './tickets-panel/tickets-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TicketEditPanelComponent } from './tickets-panel/ticket-edit-panel/ticket-edit-panel.component';
+import { AddClientComponent } from './dashboard/add-client/add-client.component';
 
 
 
@@ -30,7 +31,8 @@ import { TicketEditPanelComponent } from './tickets-panel/ticket-edit-panel/tick
     UsersPanelComponent,
     HousesPanelComponent,
     TicketsPanelComponent,
-    TicketEditPanelComponent
+    TicketEditPanelComponent,
+    AddClientComponent
   ],
   imports: [
     CommonModule,

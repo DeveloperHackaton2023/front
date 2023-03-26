@@ -12,6 +12,8 @@ export class TicketCreationComponent {
   private description = '';
   private houses!: House[];
 
+  private selectedHouse!: House;
+
   constructor(private clientService: ClientService) {
     this.houses = clientService.Houses;
   }
@@ -36,8 +38,14 @@ export class TicketCreationComponent {
     this.description = v;
   }
 
+  changeHouse(value: House) {
+    this.selectedHouse = value;
+  }
+
   onClick() {
-    this.Subject = '';
-    this.Description = '';
+    this.clientService.sendTicket(this.Subject, this.Description, this.selectedHouse).subscribe(b => {
+      this.Subject = '';
+      this.Description = '';
+    })
   }
 }

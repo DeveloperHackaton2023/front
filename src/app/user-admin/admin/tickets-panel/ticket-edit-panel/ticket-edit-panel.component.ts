@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { EditTicket } from 'src/app/services/admin-models/editTicket';
 import { Ticket } from 'src/app/services/admin-models/ticket';
 import { AdminService } from 'src/app/services/admin.service';
 
@@ -9,8 +10,11 @@ import { AdminService } from 'src/app/services/admin.service';
   styleUrls: ['./ticket-edit-panel.component.css']
 })
 export class TicketEditPanelComponent implements OnInit{
-  protected subject = '';
-  protected description = '';
+  private subject = '';
+  private description = '';
+  private adminResponse = '';
+
+  private selectedStatus = "";
 
   private id!: number;
   private ticket!: Ticket;
@@ -64,6 +68,14 @@ export class TicketEditPanelComponent implements OnInit{
     this.description = v;
   }
 
+  get AdminResponse() {
+    return this.adminResponse;
+  }
+
+  set AdminResponse(v : string) {
+    this.adminResponse = v;
+  }
+
   get Id() {
     return this.id;
   }
@@ -74,6 +86,41 @@ export class TicketEditPanelComponent implements OnInit{
   
   get isInitialized() {
     return this.adminService.IsInitialized;
+  }
+
+  changeStatus(value: number) {
+
+    switch(value) {
+      case 0:
+        this.selectedStatus = 'Created';
+        break;
+      case 1:
+        this.selectedStatus = 'InProgress';
+        break;
+      case 2:
+        this.selectedStatus = 'Denied';
+        break;
+      case 3:
+        this.selectedStatus = 'Success';
+        break;
+      default:
+        this.selectedStatus = 'Created';
+        break;
+    }
+  }
+
+  onClick() {
+    var edit: EditTicket = new EditTicket();
+    edit.id = this.id;
+    edit.subject = this.subject;
+    edit.description = this.description;
+    edit.adminResponse = this.adminResponse;
+    edit.newStatus = this.selectedStatus;
+
+    this.adminService.editTicket(edit).subscribe(b => {
+      this.Subject = '';
+      this.Description = '';
+    })
   }
 
 }

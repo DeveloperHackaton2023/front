@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Ticket } from 'src/app/services/admin-models/ticket';
 import { AdminService } from 'src/app/services/admin.service';
 import { ClientService } from 'src/app/services/client.service';
 

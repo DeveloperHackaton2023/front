@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Ticket } from 'src/app/services/admin-models/ticket';
-import { AdminService } from 'src/app/services/admin.service';
 import { ClientService } from 'src/app/services/client.service';
 
 @Component({
@@ -11,24 +9,55 @@ import { ClientService } from 'src/app/services/client.service';
 })
 export class TicketsPanelComponent implements OnInit {
 
-  protected displayedColumns = ['id', 'subject', 'description', 'created'];
+  private tickets!: Ticket[];
 
-  constructor(private clientService: ClientService, 
-    private router: Router, 
-    private activeRoute: ActivatedRoute) {
+  protected displayedColumns = ['id', 'subject', 'description', 'created', 'status', 'adminResponse'];
 
+  constructor(private clientService: ClientService) {
   }
 
   ngOnInit(): void {
+    if(!this.clientService.IsInitialized) {
+      this.clientService.initialize().subscribe(b => {
+        this.Tickets = this.clientService.getTickets;
+      });
+    }
+    else {
+      this.clientService.updateHouses().subscribe(b => {
+        this.Tickets = this.clientService.getTickets;
+      })
+    }
   }
 
+  getStatusTitle(ticket: Ticket) {
+    var lastStatus = ticket.statuses.sort((a, b) => (+a.id > +b.id ? -1 : 1))[0];
+
+    switch(lastStatus.type)
+    {
+      case 'Created':
+        return 'Создано';
+      case 'InProgress':
+        return 'В обработке'
+      case 'Denied':
+        return 'Отклонено'
+      case 'Success':
+        return 'Завершена'
+      default:
+        return lastStatus.title;
+    }
+  }
+
+  get Tickets() {
+    return this.tickets;
+  }
+
+  set Tickets(v) {
+    this.tickets = v;
+  }
 
   get isInitialized() {
     return this.clientService.IsInitialized;
   }
 
-  public openTicket(ticket: Ticket) {
-    this.router.navigate(['edit', ticket.id], {relativeTo: this.activeRoute})
-  }
 
 }
