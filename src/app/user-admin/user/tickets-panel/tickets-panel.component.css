@@ -1,0 +1,11 @@
+.spinner {
+    padding-top: 20%;
+    padding-left: 40%;
+    margin: 0 auto;
+}
+
+tr.hover-row:hover td{
+    background: #3f51b5;
+    cursor: pointer;
+    color: white
+  }

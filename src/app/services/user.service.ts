@@ -4,11 +4,13 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { User } from './user-models/user';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private _isAuthorized: boolean = false;
+  private _isInitialized: boolean = false;
   private user!: User;
   private token!: string;
 
@@ -29,17 +31,25 @@ export class UserService {
             this.user = response.body as User;
 
             if(lord == 'lord' && this.user.roles.includes('ROLE_ADMIN'))
-              this.router.navigate(['/user/admin/dashboard'])
-            else
-              this.router.navigate(['/user'])
+              this.router.navigate(['/user/admin/dashboard']);
+            else {
+              this.router.navigate(['/user/dashboard']);
+            }
           }
         });
-        
       }
     });
   }
 
-  public isAuthorized() {
+  public get User() {
+    return this.user;
+  }
+
+  public get isAuthorized() {
     return this._isAuthorized;
+  }
+
+  public get isInitialized() {
+    return this._isInitialized;
   }
 }

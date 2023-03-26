@@ -1,0 +1,47 @@
+<mat-toolbar>
+  
+  <span *ngIf="isInitialized as n; else loading">Страница пользователя — {{ Name }}</span>
+  <ng-template #loading>Загрузка...</ng-template>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+   <mat-icon>settings</mat-icon>
+ </button>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>polymer</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="powerOff()">
+   <mat-icon>power_settings_new</mat-icon>
+ </button>
+ 
+ </mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <!-- Все добавления -->
+      <a mat-list-item [routerLink]="['dashboard']">
+        <div><mat-icon>home</mat-icon>Главная</div>  
+      </a>
+
+      <!-- Вся инфа по заявкам -->
+      <a mat-list-item [routerLink]="['tickets']">
+        <div><mat-icon>map</mat-icon>Заявки</div>
+      </a>
+
+      <!-- Вся инфа по отчётам -->
+      <a mat-list-item [routerLink]="['tickets']">
+        <div><mat-icon>assignment</mat-icon>Взносы</div>
+      </a>
+
+      <!-- Вся инфа по отчётам -->
+      <a mat-list-item [routerLink]="['tickets']">
+        <div><mat-icon>assignment</mat-icon>Отчёты</div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="block">
+    
+    <router-outlet></router-outlet>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>

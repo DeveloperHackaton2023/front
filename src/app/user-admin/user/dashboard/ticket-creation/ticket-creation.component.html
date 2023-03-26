@@ -1,0 +1,36 @@
+<table class="example-full-width" cellspacing="0"><tr>
+    <td>
+        <mat-form-field class="example-form-field">
+            <mat-label>Тема</mat-label>
+            <input matInput type="text" [(ngModel)]="Subject">
+            <button *ngIf="Subject" matSuffix mat-icon-button aria-label="Clear" (click)="Subject=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+  </td>
+    
+  <td>
+    <mat-form-field appearance="fill">
+        <mat-label>Выберите вашу квартиру</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let house of Houses; index as i;" value="i">{{ house.address }} — {{ house.flatNumber }}</mat-option> 
+        </mat-select>
+      </mat-form-field>
+  </td>
+  </tr></table>
+
+  <mat-form-field class="example-form-field">
+    <mat-label>Описание</mat-label>
+    <textarea matInput [(ngModel)]="Description"
+    cdkTextareaAutosize
+        cdkAutosizeMinRows="10"
+        cdkAutosizeMaxRows="10"></textarea>
+    <button *ngIf="Description" matSuffix mat-icon-button aria-label="Clear" (click)="Description=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <p><button mat-fab extended color="primary" (click)="onClick()">
+    <mat-icon>send</mat-icon>
+    Подтвердить
+</button></p>
