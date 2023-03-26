@@ -14,7 +14,7 @@ export class TicketEditPanelComponent implements OnInit{
   private description = '';
   private adminResponse = '';
 
-  private selectedStatus = "";
+  private selectedStatus = '';
 
   private id!: number;
   private ticket!: Ticket;
@@ -35,6 +35,7 @@ export class TicketEditPanelComponent implements OnInit{
               this.ticket = t;
               this.Subject = t.subject;
               this.Description = t.description;
+              this.AdminResponse = t.adminResponse;
             }
           })
         });
@@ -45,6 +46,7 @@ export class TicketEditPanelComponent implements OnInit{
             this.ticket = t;
             this.Subject = t.subject;
             this.Description = t.description;
+            this.AdminResponse = t.adminResponse;
           }
         })
       }
@@ -111,11 +113,13 @@ export class TicketEditPanelComponent implements OnInit{
 
   onClick() {
     var edit: EditTicket = new EditTicket();
-    edit.id = this.id;
+    edit.id = +this.id;
     edit.subject = this.subject;
     edit.description = this.description;
     edit.adminResponse = this.adminResponse;
-    edit.newStatus = this.selectedStatus;
+    if(this.selectedStatus.length > 1) {
+      edit.newStatus = this.selectedStatus;
+    }
 
     this.adminService.editTicket(edit).subscribe(b => {
     })
