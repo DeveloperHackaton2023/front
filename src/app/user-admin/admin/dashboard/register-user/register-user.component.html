@@ -28,18 +28,18 @@
       </form>
     </mat-step>
 
-    <mat-step [stepControl]="houses" label="Ввод данных жилья">
+    <mat-step [stepControl]="houses" label="Ввод данных автомобилей">
         <form [formGroup]="houses">
             <div formArrayName="house">
                 <div *ngFor="let houseGroup of house?.controls; let i = index">
     
-                <h3>Добавление квартиры № — {{i + 1}}</h3>
+                <h3>Добавление автомобиля № — {{i + 1}}</h3>
                 <mat-form-field class="example-full-width">
-                  <mat-label>Адрес</mat-label>
+                  <mat-label>Марка автомобиля</mat-label>
                   <input matInput formControlName="addresCtrl" required>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                  <mat-label>Номер квартиры</mat-label>
+                  <mat-label>Номер автомобиля</mat-label>
                   <input matInput formControlName="addresCtrl" required>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">

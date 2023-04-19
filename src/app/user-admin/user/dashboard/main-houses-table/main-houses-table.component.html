@@ -1,13 +1,13 @@
 <table mat-table [dataSource]="houses">
     <!-- Position Column -->
     <ng-container matColumnDef="address">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Адрес </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Марка автомобиля </th>
       <td mat-cell *matCellDef="let element"> {{element.address}} </td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="flatNumber">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Номер квартиры </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Номер автомобиля </th>
       <td mat-cell *matCellDef="let element"> {{element.flatNumber}} </td>
     </ng-container>
 

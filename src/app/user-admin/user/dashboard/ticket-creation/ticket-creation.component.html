@@ -11,7 +11,7 @@
     
   <td>
     <mat-form-field appearance="fill">
-        <mat-label>Выберите вашу квартиру</mat-label>
+        <mat-label>Выберите ваш автомобиль</mat-label>
         <mat-select (selectionChange)="changeHouse($event.value)">
           <mat-option *ngFor="let house of Houses; index as i;" [value]="house">{{ house.address }} — {{ house.flatNumber }}</mat-option> 
         </mat-select>

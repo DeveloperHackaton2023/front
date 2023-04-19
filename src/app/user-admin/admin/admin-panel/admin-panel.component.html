@@ -1,6 +1,6 @@
 <mat-toolbar>
   
-  <span *ngIf="isInitialized as n; else loading">Страница Администратора — ОСИ №{{ getOsiNumber }}</span>
+  <span *ngIf="isInitialized as n; else loading">Страница Администратора — Блока дорожной полиции №{{ getOsiNumber }}</span>
   <ng-template #loading>Загрузка...</ng-template>
   <span class="example-spacer"></span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -29,7 +29,7 @@
       </a>
       <!-- Вся инфа по жилищам -->
       <a mat-list-item [routerLink]="['houses']">
-        <div><mat-icon>meeting_room</mat-icon>Жилища</div>
+        <div><mat-icon>meeting_room</mat-icon>Автомобили</div>
       </a>
       <!-- Вся инфа по заявкам -->
       <a mat-list-item [routerLink]="['tickets']">

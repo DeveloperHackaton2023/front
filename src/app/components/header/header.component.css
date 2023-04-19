@@ -76,8 +76,9 @@
 .header-title{
   font-size: 4vw;
   font-weight: 700;
-  margin-left: 25%;
+  /* margin-left: 25%; */
   margin-top: 2%;
+  text-align: center;
 }
 
 .header-stats{
